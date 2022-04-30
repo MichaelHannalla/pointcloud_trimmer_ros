@@ -1,0 +1,12 @@
+<!-- launch pointcloud trimmer -->
+<launch>
+  <node name="pointcloud_trimmer_ros_node" pkg="pointcloud_trimmer_ros" type="pointcloud_trimmer_ros_node.py" output="screen"/>
+  <param name="pointcloud_trimmer_node/min_x" value="-24.0"/>
+  <param name="pointcloud_trimmer_node/max_x" value="24.0"/>
+  <param name="pointcloud_trimmer_node/min_y" value="-24.0"/>
+  <param name="pointcloud_trimmer_node/max_y" value="24.0"/>
+  <param name="pointcloud_trimmer_node/min_z" value="0.05"/>
+  <param name="pointcloud_trimmer_node/max_z" value="1.5"/>
+  <param name="pointcloud_trimmer_node/pointcloud_in" value="os1_cloud_node/points"/>
+  <param name="pointcloud_trimmer_node/pointcloud_out" value="os1_cloud_node/points_filtered"/>
+</launch>
