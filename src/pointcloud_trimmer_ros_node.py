@@ -10,6 +10,8 @@ def pointcloud_clbk(untrimmed_cloud_msg):
     points = np.array([untrimmed_cloud_np['x'], (untrimmed_cloud_np['y']) ,
         (untrimmed_cloud_np['z'])]).copy().transpose()
 
+    points = points.reshape(-1, 3)  # make sure it's 2D and the 2nd dimension is 3
+
     x_in_range = np.logical_and(points[:,0] > min_x, points[:,0] < max_x)
     y_in_range = np.logical_and(points[:,1] > min_y, points[:,1] < max_y)
     z_in_range = np.logical_and(points[:,2] > min_z, points[:,2] < max_z)
